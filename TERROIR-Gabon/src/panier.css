@@ -1,0 +1,329 @@
+/* ===== PAGE PANIER ===== */
+body {
+  background: var(--fond);
+}
+
+/* ===== HEADER PANIER ===== */
+.panier-header {
+  min-height: 182px;
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ===== NAVBAR PANIER ===== */
+.panier-navbar {
+  position: static;
+  min-height: 64px;
+  padding: 0 32px;
+}
+
+.panier-navbar .marque-logo {
+  width: 54px;
+  height: 54px;
+}
+
+.panier-navbar .btn-panier.actif {
+  background: color-mix(in srgb, var(--blanc) 16%, transparent);
+}
+
+/* ===== TITRE PANIER ===== */
+.panier-hero {
+  width: min(100% - 64px, var(--largeur-page));
+  margin-inline: auto;
+  padding-top: 25px;
+}
+
+.panier-hero h1 {
+  color: var(--blanc);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.panier-hero p {
+  margin-top: 6px;
+  color: color-mix(in srgb, var(--blanc) 86%, transparent);
+  font-size: 13px;
+}
+
+/* ===== CONTENU PANIER ===== */
+.panier-main {
+  padding: 32px 0;
+}
+
+.panier-layout {
+  width: min(100% - 64px, var(--largeur-page));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  margin-inline: auto;
+}
+
+/* ===== LISTE ARTICLES ===== */
+.panier-liste {
+  display: grid;
+  gap: 10px;
+}
+
+/* ===== CARTE ARTICLE ===== */
+.article-panier {
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+  box-shadow: var(--ombre-carte);
+}
+
+/* ===== IMAGE ARTICLE ===== */
+.article-image {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--fond);
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.article-image span {
+  font-size: 26px;
+}
+
+/* ===== TEXTE ARTICLE ===== */
+.article-info h2 {
+  color: var(--texte);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-info p {
+  margin-top: 4px;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+}
+
+/* ===== QUANTITÉ ARTICLE ===== */
+.article-quantite {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn-quantite {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordures);
+  border-radius: 999px;
+  background: var(--blanc);
+  color: var(--texte);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.article-quantite strong {
+  min-width: 14px;
+  color: var(--texte);
+  text-align: center;
+}
+
+/* ===== PRIX ARTICLE ===== */
+.article-prix {
+  min-width: 130px;
+  color: var(--vert);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ===== SUPPRESSION ARTICLE ===== */
+.btn-supprimer {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #4B6A8F;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* ===== PANIER VIDE ===== */
+.panier-vide {
+  padding: 44px 24px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+  color: var(--texte-secondaire);
+  text-align: center;
+}
+
+/* ===== RÉCAPITULATIF ===== */
+.recapitulatif {
+  align-self: start;
+  padding: 24px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+  box-shadow: var(--ombre-carte);
+}
+
+.recapitulatif h2 {
+  margin-bottom: 20px;
+  color: var(--texte);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* ===== LIGNES RÉCAPITULATIF ===== */
+.recap-lignes {
+  display: grid;
+}
+
+.recap-ligne,
+.recap-calculs div,
+.recap-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.recap-ligne {
+  min-height: 32px;
+  border-bottom: 1px solid var(--bordures);
+  color: var(--texte);
+  font-size: 13px;
+}
+
+.recap-ligne span,
+.recap-calculs span {
+  min-width: 0;
+}
+
+.recap-ligne strong,
+.recap-calculs strong,
+.recap-total strong {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ===== CALCULS RÉCAPITULATIF ===== */
+.recap-calculs {
+  display: grid;
+  margin-top: 5px;
+}
+
+.recap-calculs div {
+  min-height: 31px;
+  border-bottom: 1px solid var(--bordures);
+  color: var(--texte-secondaire);
+  font-size: 13px;
+}
+
+/* ===== TOTAL RÉCAPITULATIF ===== */
+.recap-total {
+  margin: 17px 0 22px;
+  color: var(--vert);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.recap-total strong {
+  font-weight: 700;
+}
+
+/* ===== BOUTONS RÉCAPITULATIF ===== */
+.btn-paiement,
+.btn-continuer {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.btn-paiement {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.btn-continuer {
+  margin-top: 10px;
+  border: 1px solid var(--bordures);
+  background: var(--blanc);
+  color: var(--texte);
+}
+
+/* ===== FOOTER PANIER ===== */
+.panier-footer {
+  margin-top: 0;
+}
+
+/* ===== RESPONSIVE PANIER ===== */
+@media (max-width: 900px) {
+  .panier-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-panier {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+  }
+
+  .article-prix {
+    grid-column: 2;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .btn-supprimer {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* ===== RESPONSIVE MOBILE PANIER ===== */
+@media (max-width: 768px) {
+  .panier-navbar {
+    justify-content: flex-start;
+  }
+
+  .panier-navbar .marque-nom {
+    display: inline-flex;
+  }
+
+  .panier-hero,
+  .panier-layout {
+    width: min(100% - 32px, var(--largeur-page));
+  }
+
+  .article-panier {
+    grid-template-columns: 56px minmax(0, 1fr) 28px;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .article-info p {
+    line-height: 1.45;
+  }
+}

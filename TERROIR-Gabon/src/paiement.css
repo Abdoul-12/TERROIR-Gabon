@@ -1,0 +1,382 @@
+/* ===== PAGE PAIEMENT ===== */
+body {
+  background: var(--fond);
+}
+
+/* ===== HEADER PAIEMENT ===== */
+.paiement-header {
+  min-height: 182px;
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ===== NAVBAR PAIEMENT ===== */
+.paiement-navbar {
+  position: static;
+  min-height: 64px;
+  padding: 0 32px;
+}
+
+.paiement-navbar .marque-logo {
+  width: 54px;
+  height: 54px;
+}
+
+/* ===== TITRE PAIEMENT ===== */
+.paiement-hero {
+  width: min(100% - 64px, var(--largeur-page));
+  margin-inline: auto;
+  padding-top: 25px;
+}
+
+.paiement-hero h1 {
+  color: var(--blanc);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.paiement-hero p {
+  margin-top: 6px;
+  color: color-mix(in srgb, var(--blanc) 86%, transparent);
+  font-size: 13px;
+}
+
+/* ===== CONTENU PAIEMENT ===== */
+.paiement-main {
+  padding: 32px 0;
+}
+
+.paiement-layout {
+  width: min(100% - 64px, var(--largeur-page));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px;
+  margin-inline: auto;
+}
+
+.paiement-colonne {
+  min-width: 0;
+}
+
+/* ===== ÉTAPES PAIEMENT ===== */
+.etapes-paiement {
+  min-height: 66px;
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+}
+
+.etape {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--texte-secondaire);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.etape span {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bordures);
+  border-radius: 999px;
+  background: var(--fond);
+  color: var(--texte-secondaire);
+}
+
+.etape.valide,
+.etape.active {
+  color: var(--texte);
+}
+
+.etape.valide span {
+  border-color: var(--vert);
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.etape.active span {
+  border-color: var(--jaune);
+  background: var(--jaune);
+  color: var(--texte);
+}
+
+.separateur {
+  height: 1px;
+  background: var(--bordures);
+}
+
+.separateur.actif {
+  background: var(--vert);
+}
+
+/* ===== FORMULAIRE PAIEMENT ===== */
+.formulaire-paiement {
+  display: grid;
+  gap: 12px;
+}
+
+/* ===== BLOC FORMULAIRE ===== */
+.bloc-formulaire {
+  padding: 24px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+}
+
+.bloc-formulaire h2 {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--bordures);
+  color: var(--texte);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ===== MÉTHODES DE PAIEMENT ===== */
+.methodes-paiement {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.methode-paiement {
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordures);
+  border-radius: 7px;
+  background: var(--fond);
+  cursor: pointer;
+}
+
+.methode-paiement input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.methode-paiement.active,
+.methode-paiement:has(input:checked) {
+  border: 2px solid var(--vert);
+  background: var(--vert-clair);
+}
+
+.methode-icone {
+  margin-bottom: 8px;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.methode-paiement strong {
+  color: var(--texte);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.methode-paiement small {
+  margin-top: 4px;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+}
+
+/* ===== CHAMPS FORMULAIRE ===== */
+.champ-formulaire {
+  display: grid;
+  gap: 7px;
+  color: var(--texte);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.champ-formulaire input,
+.champ-formulaire select {
+  width: 100%;
+  min-height: 43px;
+  border: 1px solid var(--bordures);
+  border-radius: 7px;
+  background: var(--blanc);
+  color: var(--texte);
+  padding: 0 14px;
+  font: inherit;
+}
+
+.champ-formulaire input::placeholder {
+  color: var(--texte-secondaire);
+}
+
+.grille-champs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bloc-formulaire .champ-formulaire + .champ-formulaire {
+  margin-top: 12px;
+}
+
+/* ===== MESSAGE FORMULAIRE ===== */
+.message-formulaire {
+  min-height: 18px;
+  color: var(--vert);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.message-formulaire.erreur {
+  color: #B91C1C;
+}
+
+/* ===== ACTIONS PAIEMENT ===== */
+.btn-confirmer,
+.btn-retour {
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+.btn-confirmer {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+.btn-confirmer:disabled {
+  cursor: wait;
+  opacity: 0.76;
+}
+
+.btn-retour {
+  border: 1px solid var(--bordures);
+  background: var(--blanc);
+  color: var(--texte);
+}
+
+/* ===== RÉCAPITULATIF ===== */
+.paiement-recap {
+  align-self: start;
+  padding: 24px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+  box-shadow: var(--ombre-carte);
+}
+
+.paiement-recap h2 {
+  margin-bottom: 20px;
+  color: var(--texte);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* ===== LIGNES RÉCAPITULATIF ===== */
+.paiement-recap-lignes {
+  display: grid;
+}
+
+.paiement-recap-ligne,
+.paiement-calculs div,
+.paiement-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.paiement-recap-ligne {
+  min-height: 32px;
+  border-bottom: 1px solid var(--bordures);
+  color: var(--texte);
+  font-size: 13px;
+}
+
+.paiement-recap-ligne strong,
+.paiement-calculs strong,
+.paiement-total strong {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ===== CALCULS RÉCAPITULATIF ===== */
+.paiement-calculs {
+  display: grid;
+  margin-top: 5px;
+}
+
+.paiement-calculs div {
+  min-height: 31px;
+  border-bottom: 1px solid var(--bordures);
+  color: var(--texte-secondaire);
+  font-size: 13px;
+}
+
+/* ===== TOTAL RÉCAPITULATIF ===== */
+.paiement-total {
+  margin-top: 17px;
+  color: var(--vert);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.paiement-total strong {
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE PAIEMENT ===== */
+@media (max-width: 900px) {
+  .paiement-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .etapes-paiement {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .separateur {
+    display: none;
+  }
+}
+
+/* ===== RESPONSIVE MOBILE PAIEMENT ===== */
+@media (max-width: 768px) {
+  .paiement-navbar {
+    justify-content: flex-start;
+  }
+
+  .paiement-navbar .marque-nom {
+    display: inline-flex;
+  }
+
+  .paiement-hero,
+  .paiement-layout {
+    width: min(100% - 32px, var(--largeur-page));
+  }
+
+  .methodes-paiement,
+  .grille-champs {
+    grid-template-columns: 1fr;
+  }
+
+  .bloc-formulaire,
+  .paiement-recap {
+    padding: 18px;
+  }
+}
