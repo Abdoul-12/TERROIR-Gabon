@@ -1,0 +1,733 @@
+/* ===== PAGE ADMIN DASHBOARD ===== */
+body {
+  min-height: 100vh;
+  background: var(--fond);
+}
+
+/* ===== HEADER DASHBOARD ===== */
+.dashboard-header {
+  min-height: 182px;
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ===== NAVBAR DASHBOARD ===== */
+.dashboard-navbar {
+  position: static;
+  min-height: 64px;
+  padding: 0 32px;
+}
+
+.dashboard-navbar .marque-logo {
+  width: 54px;
+  height: 54px;
+}
+
+.dashboard-navbar .btn-admin.actif {
+  background: color-mix(in srgb, var(--jaune) 14%, transparent);
+}
+
+/* ===== TITRE DASHBOARD ===== */
+.dashboard-hero {
+  width: min(100% - 64px, var(--largeur-page));
+  margin-inline: auto;
+  padding-top: 25px;
+}
+
+.dashboard-hero h1 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--blanc);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dashboard-hero p {
+  margin-top: 7px;
+  color: color-mix(in srgb, var(--blanc) 86%, transparent);
+  font-size: 13px;
+}
+
+/* ===== CONTENU DASHBOARD ===== */
+.dashboard-main {
+  width: min(100% - 64px, var(--largeur-page));
+  margin-inline: auto;
+  padding: 32px 0;
+}
+
+/* ===== NOTIFICATION DASHBOARD ===== */
+.notification-dashboard {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--vert);
+  color: var(--blanc);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.notification-dashboard.visible {
+  display: flex;
+}
+
+/* ===== CARTES STATISTIQUES ===== */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-admin {
+  min-height: 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+  text-align: center;
+}
+
+.stat-admin span {
+  color: var(--texte-secondaire);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.stat-admin strong {
+  margin-top: 8px;
+  color: var(--vert);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-admin strong.attente {
+  color: var(--jaune);
+}
+
+/* ===== CARTE COMMANDES ===== */
+.commandes-card {
+  overflow: hidden;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+}
+
+.commandes-entete {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--bordures);
+}
+
+.commandes-entete h2 {
+  color: var(--texte);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.commandes-entete span {
+  color: var(--texte-secondaire);
+  font-size: 13px;
+}
+
+/* ===== LISTE COMMANDES ===== */
+.commandes-liste {
+  display: grid;
+}
+
+.commande-ligne {
+  min-height: 107px;
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--bordures);
+}
+
+.commande-ligne:last-child {
+  border-bottom: 0;
+}
+
+/* ===== IMAGE COMMANDE ===== */
+.commande-image {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--fond);
+}
+
+.commande-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== INFORMATIONS COMMANDE ===== */
+.commande-infos h3 {
+  color: var(--texte);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.commande-infos p {
+  margin-top: 5px;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+}
+
+.commande-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+/* ===== STATUT COMMANDE ===== */
+.badge-commande {
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.badge-commande.attente {
+  background: var(--jaune-clair);
+  color: var(--jaune);
+}
+
+.badge-commande.verse {
+  background: var(--vert-clair);
+  color: var(--vert);
+}
+
+.btn-verser {
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  padding: 0 15px;
+  background: var(--vert);
+  color: var(--blanc);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ===== MONTANTS COMMANDE ===== */
+.commande-montants {
+  min-width: 180px;
+  text-align: right;
+}
+
+.commande-total {
+  display: block;
+  color: var(--texte);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.commande-net {
+  display: block;
+  margin-top: 4px;
+  color: var(--vert);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.commande-commission {
+  display: block;
+  margin-top: 2px;
+  color: var(--texte-secondaire);
+  font-size: 12px;
+}
+
+/* ===== RESPONSIVE DASHBOARD ===== */
+@media (max-width: 900px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commande-ligne {
+    grid-template-columns: 46px minmax(0, 1fr);
+  }
+
+  .commande-montants {
+    grid-column: 2;
+    min-width: 0;
+    text-align: left;
+  }
+}
+
+/* ===== RESPONSIVE MOBILE DASHBOARD ===== */
+@media (max-width: 768px) {
+  .dashboard-navbar {
+    justify-content: flex-start;
+  }
+
+  .dashboard-navbar .marque-nom {
+    display: inline-flex;
+  }
+
+  .dashboard-main,
+  .dashboard-hero {
+    width: min(100% - 32px, var(--largeur-page));
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .commandes-entete,
+  .commande-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ===== GESTION ADMIN : ONGLET ===== */
+.admin-gestion {
+  margin-top: 24px;
+  overflow: hidden;
+  border: 1px solid var(--bordures);
+  border-radius: 10px;
+  background: var(--blanc);
+}
+
+.gestion-onglets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--bordures);
+}
+
+.gestion-onglet {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-right: 1px solid var(--bordures);
+  border-bottom: 3px solid transparent;
+  background: var(--blanc);
+  color: var(--texte);
+  font-weight: 700;
+}
+
+.gestion-onglet:last-child {
+  border-right: 0;
+}
+
+.gestion-onglet.actif {
+  border-bottom-color: var(--vert);
+  color: var(--vert);
+}
+
+.gestion-panneau {
+  display: none;
+  padding: 20px;
+}
+
+.gestion-panneau.actif {
+  display: block;
+}
+
+/* ===== GESTION ADMIN : NOTIFICATION ===== */
+.notification-gestion {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 20px 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: var(--vert);
+  color: var(--blanc);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.notification-gestion.visible {
+  display: flex;
+}
+
+/* ===== GESTION ADMIN : FILTRES PRODUITS ===== */
+.gestion-filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.gestion-filtre {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border: 1px solid var(--bordures);
+  border-radius: 999px;
+  background: var(--fond);
+  color: var(--texte);
+  font-weight: 700;
+}
+
+.gestion-filtre.actif {
+  border-color: var(--vert);
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ===== GESTION ADMIN : LISTES ===== */
+.gestion-liste {
+  overflow: hidden;
+  border: 1px solid var(--bordures);
+  border-radius: 9px;
+  background: var(--blanc);
+}
+
+.gestion-ligne-produit,
+.gestion-ligne-producteur {
+  min-height: 72px;
+  display: grid;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-bottom: 1px solid var(--bordures);
+}
+
+.gestion-ligne-produit:last-child,
+.gestion-ligne-producteur:last-child {
+  border-bottom: 0;
+}
+
+.gestion-ligne-produit {
+  grid-template-columns: 42px minmax(0, 1fr) 110px 112px 116px;
+}
+
+.gestion-ligne-producteur {
+  grid-template-columns: 46px minmax(0, 1fr) 110px 92px;
+}
+
+/* ===== GESTION ADMIN : ICÔNES CATÉGORIES ===== */
+.gestion-icone-categorie {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-size: 20px;
+}
+
+.gestion-icone-categorie.agricole {
+  background: var(--vert-clair);
+  color: var(--vert);
+}
+
+.gestion-icone-categorie.artisanal {
+  background: var(--jaune-clair);
+  color: color-mix(in srgb, var(--texte) 72%, var(--jaune));
+}
+
+.gestion-icone-categorie.cosmetique {
+  background: color-mix(in srgb, var(--jaune-clair) 36%, var(--blanc));
+  color: color-mix(in srgb, var(--texte) 70%, var(--jaune));
+}
+
+/* ===== GESTION ADMIN : TEXTES PRODUITS ===== */
+.gestion-produit-infos strong,
+.gestion-producteur-infos strong {
+  display: block;
+  color: var(--texte);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.gestion-produit-meta,
+.gestion-producteur-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+  color: var(--texte-secondaire);
+  font-size: 11px;
+}
+
+.gestion-produit-meta span,
+.gestion-producteur-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gestion-prix-produit {
+  color: var(--vert);
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ===== GESTION ADMIN : BADGES ===== */
+.gestion-badge-statut,
+.gestion-badge-specialite,
+.gestion-badge-actif {
+  min-height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.gestion-badge-statut.publie,
+.gestion-badge-actif {
+  background: var(--vert-clair);
+  color: var(--vert-fonce);
+}
+
+.gestion-badge-statut.en_attente {
+  background: var(--jaune-clair);
+  color: color-mix(in srgb, var(--texte) 72%, var(--jaune));
+}
+
+.gestion-badge-specialite {
+  background: var(--fond);
+  color: var(--texte);
+}
+
+/* ===== GESTION ADMIN : BOUTONS LIGNES ===== */
+.gestion-actions-ligne {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.gestion-btn-icone {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--bordures);
+  border-radius: 8px;
+  background: var(--blanc);
+  color: var(--texte);
+  font-size: 17px;
+}
+
+.gestion-btn-icone.publier {
+  color: var(--vert);
+}
+
+.gestion-btn-icone.depublier {
+  color: var(--jaune);
+}
+
+.gestion-btn-icone.supprimer {
+  background: color-mix(in srgb, var(--jaune-clair) 45%, var(--blanc));
+}
+
+/* ===== GESTION ADMIN : FORMULAIRE PRODUIT ===== */
+.gestion-form {
+  display: grid;
+  gap: 14px;
+}
+
+.gestion-upload {
+  min-height: 132px;
+  display: grid;
+  place-items: center;
+  gap: 5px;
+  padding: 22px;
+  border: 1px dashed var(--bordures);
+  border-radius: 10px;
+  background: var(--fond);
+  color: var(--texte);
+  text-align: center;
+  cursor: pointer;
+}
+
+.gestion-upload input {
+  display: none;
+}
+
+.gestion-upload i {
+  color: var(--vert);
+  font-size: 34px;
+}
+
+.gestion-upload strong {
+  font-size: 14px;
+}
+
+.gestion-upload small {
+  color: var(--texte-secondaire);
+  font-size: 12px;
+}
+
+.gestion-grille {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.gestion-champ {
+  display: grid;
+  gap: 7px;
+  color: var(--texte);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gestion-champ span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gestion-champ i {
+  color: var(--vert);
+}
+
+.gestion-champ input,
+.gestion-champ select,
+.gestion-champ textarea {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--bordures);
+  border-radius: 8px;
+  background: var(--blanc);
+  color: var(--texte);
+  padding: 0 13px;
+  font: inherit;
+}
+
+.gestion-champ textarea {
+  min-height: 76px;
+  padding-block: 10px;
+  resize: vertical;
+}
+
+.gestion-actions-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.gestion-btn-annuler,
+.gestion-btn-enregistrer,
+.gestion-btn-ajouter-producteur {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-weight: 700;
+}
+
+.gestion-btn-annuler {
+  background: var(--fond);
+  color: var(--texte);
+}
+
+.gestion-btn-enregistrer,
+.gestion-btn-ajouter-producteur {
+  background: var(--vert);
+  color: var(--blanc);
+}
+
+/* ===== GESTION ADMIN : PRODUCTEURS ===== */
+.gestion-producteurs-entete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.gestion-producteurs-entete h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--texte);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.gestion-avatar-producteur {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--blanc);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.gestion-vide {
+  padding: 28px;
+  color: var(--texte-secondaire);
+  text-align: center;
+}
+
+/* ===== RESPONSIVE GESTION ADMIN ===== */
+@media (max-width: 900px) {
+  .gestion-ligne-produit,
+  .gestion-ligne-producteur {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .gestion-prix-produit,
+  .gestion-badge-statut,
+  .gestion-badge-actif,
+  .gestion-actions-ligne {
+    grid-column: 2;
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+/* ===== RESPONSIVE MOBILE GESTION ADMIN ===== */
+@media (max-width: 768px) {
+  .gestion-onglets,
+  .gestion-grille {
+    grid-template-columns: 1fr;
+  }
+
+  .gestion-producteurs-entete,
+  .gestion-actions-form {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

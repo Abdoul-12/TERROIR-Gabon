@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerroirGabon — Tableau de bord administrateur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+  <!-- ===== VARIABLES CSS GLOBALES ===== -->
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <!-- ===== CSS PAGE ADMIN ===== -->
+  <link rel="stylesheet" href="/src/admin.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="dashboard-header">
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar dashboard-navbar">
+      <a class="marque" href="index.html" aria-label="Accueil TerroirGabon">
+        <img class="marque-logo" src="/src/image/logo.png" alt="Logo TerroirGabon" />
+        <span class="marque-nom">Terroir<span>Gabon</span></span>
+      </a>
+
+      <div class="nav-liens" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="produits.html">Produits</a>
+        <a href="producteurs.html">Producteurs</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn-admin actif" href="admin.html"><i class="ti ti-settings"></i> Admin</a>
+        <a class="btn-panier" href="panier.html">
+          <i class="ti ti-shopping-cart"></i> Panier
+          <span data-compteur-panier>0</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ===== TITRE PAGE ===== -->
+    <div class="dashboard-hero">
+      <h1><i class="ti ti-settings"></i> Tableau de bord administrateur</h1>
+      <p>Suivi des commandes et versements aux producteurs</p>
+    </div>
+  </header>
+
+  <!-- ===== CONTENU PRINCIPAL ===== -->
+  <main class="dashboard-main">
+    <!-- ===== NOTIFICATION DASHBOARD ===== -->
+    <div class="notification-dashboard" data-notification-dashboard>
+      <i class="ti ti-circle-check"></i>
+      <span data-notification-message></span>
+    </div>
+
+    <!-- ===== STATISTIQUES ===== -->
+    <section class="dashboard-stats" aria-label="Statistiques administrateur">
+      <article class="stat-admin">
+        <span>Total commandes</span>
+        <strong data-total-commandes>0</strong>
+      </article>
+      <article class="stat-admin">
+        <span>Revenus encaissés</span>
+        <strong data-revenus>0 F</strong>
+      </article>
+      <article class="stat-admin">
+        <span>En attente versement</span>
+        <strong class="attente" data-en-attente>0</strong>
+      </article>
+      <article class="stat-admin">
+        <span>Commissions gagnées</span>
+        <strong data-commissions>0 F</strong>
+      </article>
+    </section>
+
+    <!-- ===== ONGLET PRODUITS / AJOUT / PRODUCTEURS ===== -->
+    <section class="admin-gestion">
+      <!-- ===== NAVIGATION DES ONGLET ===== -->
+      <nav class="gestion-onglets" aria-label="Gestion administrateur">
+        <button class="gestion-onglet actif" type="button" data-gestion-onglet="produits">
+          <i class="ti ti-layout-grid"></i>
+          Produits
+        </button>
+        <button class="gestion-onglet" type="button" data-gestion-onglet="ajouter-produit">
+          <i class="ti ti-circle-plus"></i>
+          Ajouter produit
+        </button>
+        <button class="gestion-onglet" type="button" data-gestion-onglet="producteurs">
+          <i class="ti ti-users"></i>
+          Producteurs
+        </button>
+      </nav>
+
+      <!-- ===== NOTIFICATION DES ONGLET ===== -->
+      <div class="notification-gestion" data-notification-gestion>
+        <i class="ti ti-circle-check"></i>
+        <span data-notification-gestion-message></span>
+      </div>
+
+      <!-- ===== PANNEAU PRODUITS ===== -->
+      <section class="gestion-panneau actif" data-gestion-panneau="produits">
+        <div class="gestion-filtres" aria-label="Filtrer les produits">
+          <button class="gestion-filtre actif" type="button" data-filtre-produit="tous">
+            <i class="ti ti-layout-grid"></i>
+            Tous
+          </button>
+          <button class="gestion-filtre" type="button" data-filtre-produit="agricole">
+            <i class="ti ti-plant-2"></i>
+            Agricole
+          </button>
+          <button class="gestion-filtre" type="button" data-filtre-produit="artisanal">
+            <i class="ti ti-brush"></i>
+            Artisanal
+          </button>
+          <button class="gestion-filtre" type="button" data-filtre-produit="cosmetique">
+            <i class="ti ti-sparkles"></i>
+            Cosmétique
+          </button>
+        </div>
+
+        <div class="gestion-liste" data-liste-produits-admin></div>
+      </section>
+
+      <!-- ===== PANNEAU AJOUT PRODUIT ===== -->
+      <section class="gestion-panneau" data-gestion-panneau="ajouter-produit">
+        <form class="gestion-form" data-form-produit-admin>
+          <label class="gestion-upload">
+            <input type="file" name="photo" accept="image/png, image/jpeg" />
+            <i class="ti ti-cloud-upload"></i>
+            <strong>Cliquer pour choisir une photo</strong>
+            <small>JPG ou PNG — max 2 MB</small>
+          </label>
+
+          <div class="gestion-grille">
+            <label class="gestion-champ">
+              <span><i class="ti ti-tag"></i> Nom du produit</span>
+              <input type="text" name="nom" placeholder="Ex : Miel sauvage de forêt" required />
+            </label>
+
+            <label class="gestion-champ">
+              <span><i class="ti ti-coin"></i> Prix en FCFA</span>
+              <input type="number" name="prix" placeholder="Ex : 5000" required />
+            </label>
+          </div>
+
+          <label class="gestion-champ">
+            <span><i class="ti ti-align-left"></i> Description</span>
+            <textarea name="description" placeholder="Décrivez le produit..." required></textarea>
+          </label>
+
+          <div class="gestion-grille">
+            <label class="gestion-champ">
+              <span><i class="ti ti-category"></i> Catégorie</span>
+              <select name="categorie" required>
+                <option value="agricole">Agricole</option>
+                <option value="artisanal">Artisanal</option>
+                <option value="cosmetique">Cosmétique</option>
+              </select>
+            </label>
+
+            <label class="gestion-champ">
+              <span><i class="ti ti-user-check"></i> Producteur associé</span>
+              <select name="producteur" data-select-producteurs-admin required></select>
+            </label>
+          </div>
+
+          <div class="gestion-grille">
+            <label class="gestion-champ">
+              <span><i class="ti ti-map-pin"></i> Ville d'origine</span>
+              <input type="text" name="ville" placeholder="Ex : Lambaréné" required />
+            </label>
+
+            <label class="gestion-champ">
+              <span><i class="ti ti-map"></i> Province</span>
+              <select name="province" data-select-provinces-admin required></select>
+            </label>
+          </div>
+
+          <div class="gestion-actions-form">
+            <button class="gestion-btn-annuler" type="reset">
+              <i class="ti ti-x"></i>
+              Annuler
+            </button>
+            <button class="gestion-btn-enregistrer" type="submit">
+              <i class="ti ti-device-floppy"></i>
+              Enregistrer
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===== PANNEAU PRODUCTEURS ===== -->
+      <section class="gestion-panneau" data-gestion-panneau="producteurs">
+        <header class="gestion-producteurs-entete">
+          <h2><i class="ti ti-users"></i> Producteurs inscrits</h2>
+          <button class="gestion-btn-ajouter-producteur" type="button" data-ajouter-producteur>
+            <i class="ti ti-user-plus"></i>
+            Ajouter un producteur
+          </button>
+        </header>
+
+        <div class="gestion-liste" data-liste-producteurs-admin></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ===== SCRIPT PAGE ADMIN ===== -->
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>

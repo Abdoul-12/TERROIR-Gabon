@@ -1,5 +1,5 @@
 /* ===== IMPORT POLICE ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');y
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 
 
@@ -119,6 +119,10 @@ img {
   align-items: center;
   gap: 6px;
 }
+.nav-liens a:hover {
+  background: var(--jaune);
+  color: var(--vert-fonce);
+}
 
 .nav-liens a,
 .btn-admin,
@@ -157,7 +161,7 @@ img {
   font-size: 13px;
 }
 
-.btn-panier {
+.btn-panier  {
   gap: 8px;
   padding: 0 14px;
   background: color-mix(in srgb, var(--blanc) 13%, transparent);
@@ -175,6 +179,10 @@ img {
   background: var(--jaune);
   color: var(--vert-fonce);
   font-size: 11px;
+}
+
+.btn-ajout:hover {
+  background: var(--vert-fonce);
 }
 
 /* ===== HERO ===== */
@@ -292,11 +300,21 @@ img {
   color: var(--vert-fonce);
 }
 
+.btn-principal:hover {
+  background: var(--vert-fonce);
+  color: var(--blanc);
+}
+
 .btn-secondaire {
   min-width: 254px;
   border: 1px solid color-mix(in srgb, var(--blanc) 32%, transparent);
   background: color-mix(in srgb, var(--blanc) 10%, transparent);
   color: var(--blanc);
+}
+
+.btn-secondaire:hover {
+  background: var(--blanc);
+  color: var(--vert);
 }
 
 /* ===== STATS ===== */
