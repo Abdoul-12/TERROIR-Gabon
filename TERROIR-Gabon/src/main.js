@@ -1,20 +1,28 @@
 // ===== IMPORT DU CSS GLOBAL =====
 import './style.css'
 import logoUrl from './image/logo.png'
+import heroUrl from './image/carte.png'
+import categorieAgricoleUrl from './image/agricol.png'
+import categorieArtisanalUrl from './image/artisanal.png'
+import categorieCosmetiqueUrl from './image/cosmetique.png'
+import produitMielUrl from './image/miel.png'
+import produitMasqueUrl from './image/masque.png'
+import produitKariteUrl from './image/beurre.png'
+import produitPimentUrl from './image/piment.png'
 
 // ===== CHEMINS DES IMAGES À REMPLACER =====
 const IMAGES = {
-  hero: '/src/image/carte.png',
+  hero: heroUrl,
   categories: {
-    agricole: '/src/image/agricol.png',
-    artisanal: '/src/image/artisanal.png',
-    cosmetique: '/src/image/cosmetique.png',
+    agricole: categorieAgricoleUrl,
+    artisanal: categorieArtisanalUrl,
+    cosmetique: categorieCosmetiqueUrl,
   },
   produits: {
-    miel: '/src/image/miel.png',
-    masque: '/src/image/masque.png',
-    karite: '/src/image/beurre.png',
-    piment: '/src/image/piment.png',
+    miel: produitMielUrl,
+    masque: produitMasqueUrl,
+    karite: produitKariteUrl,
+    piment: produitPimentUrl,
   },
 }
 
