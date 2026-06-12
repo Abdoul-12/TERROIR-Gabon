@@ -1,0 +1,383 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 10;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    word-spacing: 30px;
+    height: 50px;
+    background-color: #2E7D32;
+    font-size: 24px;
+    color: white;
+}
+
+
+nav {
+    word-spacing: 40px;
+    justify-content: space-between;
+   
+}
+
+nav:hover a {
+    background-color: --jaune;
+    color: #1B5E20;
+    height: 50px;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+.card a {
+    text-decoration: none;
+    border-radius: 15%;
+    background-color:#1B5E20;
+    padding: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.card a {
+   text-decoration: none;
+   font-size: 10px;
+   color: white;
+}
+
+
+.admin {
+    padding: 10;
+    word-spacing: 20px;
+}
+
+main {
+    height: 1500px;
+    justify-content: center;
+}
+
+.catégorie {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    line-height: 30px;
+    border-radius: 10px;
+    font-size: 10px;
+    border:1px solid gainsboro;
+}
+
+.card p {
+    color: gainsboro;
+}
+.produit{
+    font-size: 20px;
+}
+
+.centre {
+    height: 90px;
+    line-height: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    background-color:#2E7D32;
+    color: white;
+}
+
+.nom {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    justify-content: center;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    color: #E9AE44;
+}
+
+.photo {
+    background-color: white;
+    height: 200px;
+}
+
+.article {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+.navbtn1 {
+    font-size: 15px;
+    height: 30px;
+    width: 70px;
+    border:1px solid #E9AE44;
+    font-size: 15px;
+    border-radius: 10px;
+
+}
+
+.navbtn1 a {
+    text-decoration: none;
+    color: #E9AE44;
+}
+
+.navbtn2 {
+    font-size: 15px;
+    height: 30px;
+    width: 70px;
+    border:1px solid #E9AE44;
+    background-color: #E9AE44;
+    opacity: 65%;
+    font-size: 15px;
+    border-radius: 10px;
+
+
+}
+
+.navbtn2 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .text {
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    line-height: 20px;
+
+} */
+
+
+.footer {
+  padding: 40px 0 37px;
+  background: #1B5E20;
+  color: color-mix(white 54%, #1B5E20);
+}
+
+.footer-contenu {
+  display: grid;
+  grid-template-columns: 1.6fr 0.7fr 0.7fr;
+  gap: 48px;
+}
+
+/* ===== LOGO FOOTER ===== */
+.footer-marque {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 7px;
+  color: var(--blanc);
+}
+
+.footer-logo {
+  width: 62px;
+  height: 62px;
+  padding: 4px;
+  border-radius: 12px;
+  background: color-mix(in srgb, white 92%, transparent);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--texte) 18%, transparent));
+}
+
+.footer-nom {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-nom span {
+  color:#F9A825;
+}
+
+.footer p {
+  max-width: 600px;
+}
+
+.footer h2 {
+  margin-bottom: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.footer a:not(.footer-marque) {
+  display: block;
+  margin-top: 7px;
+}
+
+.footer-bas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, white 12%, transparent);
+  font-size: 12px;
+}
+
+/* ===== NAVIGATION MOBILE ===== */
+.navigation-mobile {
+  display: none;
+}
+
+/* ===== RESPONSIVE TABLETTE ===== */
+@media (max-width: 900px) {
+  .section-conteneur,
+  .footer-contenu,
+  .footer-bas {
+    width: min(100% - 32px, 1024px);
+  }
+
+  .navbar {
+    grid-template-columns: 1fr auto;
+    row-gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .nav-liens {
+    order: 3;
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .hero-image-cercle {
+    right: -92px;
+  }
+
+  .grille-produits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 64px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+
+  .marque-logo,
+  .footer-logo {
+    width: 54px;
+    height: 54px;
+  }
+
+  .marque-nom,
+  .footer-nom {
+    font-size: 18px;
+  }
+
+  .nav-liens,
+  .nav-actions {
+    display: none;
+  }
+
+  .hero {
+    min-height: 560px;
+    padding: 96px 0 48px;
+  }
+
+  .hero-image-cercle {
+    width: 190px;
+    height: 190px;
+    top: 70px;
+    right: -82px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn-principal,
+  .btn-secondaire {
+    width: min(100%, 320px);
+  }
+
+  .stats,
+  .grille-categories,
+  .grille-produits,
+  .footer-contenu {
+    grid-template-columns: 1fr;
+  }
+
+  .stats article {
+    min-height: 88px;
+    border-left: 0;
+    border-top: 1px solid #E5E7EB;
+  }
+
+  .stats article:first-child {
+    border-top: 0;
+  }
+
+  .titre-section.ligne,
+  .footer-bas {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navigation-mobile {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 60px;
+    border-top: 1px solid #E5E7EB;
+    background: white;
+  }
+
+  .navigation-mobile a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .navigation-mobile a.actif {
+    color: var(--vert);
+  }
+}
+
+.navfoot a {
+    text-decoration: none;
+    color:  color-mix(in srgb, white 92%, transparent);
+}

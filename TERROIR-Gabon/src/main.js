@@ -234,13 +234,13 @@ function creerCartesProduits() {
 // ===== HTML DE LA PAGE ACCUEIL =====
 document.getElementById('app').innerHTML = `
   <!-- ===== HEADER ===== -->
-  <header class="header">
+  header class="header">
     <!-- ===== NAVBAR ===== -->
     <nav class="navbar">
       <a class="marque" href="index.html" aria-label="Accueil TerroirGabon">
         <img class="marque-logo" src="${logoUrl}" alt="Logo TerroirGabon" />
         <span class="marque-nom">Terroir<span>Gabon</span></span>
-      </a>
+      </a><
 
       <div class="nav-liens" aria-label="Navigation principale">
         <a class="actif" href="index.html">Accueil</a>
