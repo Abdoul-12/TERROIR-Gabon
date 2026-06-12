@@ -87,11 +87,13 @@ body {
   min-height: 103px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   padding: 20px;
   border: 1px solid var(--bordures);
   border-radius: 10px;
   background: var(--blanc);
+  text-align: center;
 }
 
 .stat-admin span {
