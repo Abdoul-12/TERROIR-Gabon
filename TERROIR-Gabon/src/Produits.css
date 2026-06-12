@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    word-spacing: 30px;
+    height: 50px;
+    background-color: #0E8117;
+    font-size: 24px;
+    color: white;
+}
+
+
+nav {
+    word-spacing: 40px;
+    justify-content: space-between;
+   
+}
+
+nav:hover a {
+    background-color: #E9AE44;
+    color: #0E8117;
+    height: 50px;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+.card a {
+    text-decoration: none;
+    border-radius: 15%;
+    background-color: #0E8117;
+    padding: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.card a {
+   text-decoration: none;
+   font-size: 10px;
+   color: white;
+}
+
+
+.admin {
+    padding: 10;
+    word-spacing: 20px;
+}
+
+main {
+    height: 500px;
+    justify-content: center;
+}
+
+.catégorie {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    line-height: 30px;
+    border-radius: 10px;
+    font-size: 10px;
+    border:1px solid gainsboro;
+}
+
+.card p {
+    color: gainsboro;
+}
+.produit{
+    font-size: 20px;
+}
+
+.centre {
+    height: 90px;
+    line-height: 40px;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    background-color: #0E8117;
+    color: white;
+}
+
+.nom {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    justify-content: center;
+    height: 50px;
+    align-content: center;
+    text-align: center;
+    color: #E9AE44;
+}
+
+.photo {
+    background-color: white;
+    height: 200px;
+}
+
+.article {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+.navbtn1 {
+    font-size: 15px;
+    height: 30px;
+    width: 70px;
+    border:1px solid #E9AE44;
+    font-size: 15px;
+    border-radius: 10px;
+
+}
+
+.navbtn1 a {
+    text-decoration: none;
+    color: #E9AE44;
+}
+
+.navbtn2 {
+    font-size: 15px;
+    height: 30px;
+    width: 70px;
+    border:1px solid #E9AE44;
+    background-color: #E9AE44;
+    opacity: 65%;
+    font-size: 15px;
+    border-radius: 10px;
+
+
+}
+
+.navbtn2 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* .text {
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    line-height: 20px;
+
+} */
